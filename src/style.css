@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+header {
+  background-color: rgb(21, 130, 255);
+  display:flex;
+  justify-content: space-between;
+}
+
+
+.container {
+max-width: 1200px;
+width: 1200px;
+margin:auto
+}
+header .container{
+display:flex;
+justify-content: space-between;
+padding:15px 0 ;
+}
+
+.logo {
+  color:white;
+  font-size: 20px;
+}
+
+.search input {
+  background-color: transparent;
+  border-width: 0 0 1px 0;
+  border-color: white;
+  color: wheat;
+  outline: none;
+  font-size: 18px;
+  width: 180px
+}
+
+
+.search input::placeholder {
+  color:white
+}
+.search .fa-search {
+color:white
+}
+.search {
+border-width: 0 0 1px 0;
+  border-color: white;
+  border-style: solid;
+}
+.new-task-section {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.new-task-section button {
+  background-color: white;
+  border: 1px solid white;
+  padding: 15px 30px;
+  shadow-box: 0px 2px 3px lightgray
+}
+
+
+
+.new-task-section input {
+  outline: none;
+  border-width: 0 0 1px ;
+  padding: 10px;
+  border-color: lightgray;
+  width: 70%;
+  color: gray;
+  font-size: 15px;
+}
+
+
+.new-task-section input::placeholder {
+  color:gray;
+}
+
+  .new-task-section input{
+    background-color: white;
+    border: 1px ;
+    padding: 5px 15px;
+  }
+  .open-task-section-header{
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-top: 15px
+  }
+
+  .open-task-section-header select {
+    border-width: 0 0 1px;
+    border-color: lightgrey;
+    font-size: 15px ;
+   padding: 5px 15px
+  }
+  .ADD {
+    width: 70px;
+    height: 30px;
+    -webkit-box-shadow: 0px 3px 10px 2px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 3px 10px 2px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 3px 10px 2px rgba(34, 60, 80, 0.2);
+  }
+
+.tasks {
+  margin-top: 20px;
+  width: 1200px;
+}
+  .task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1200px;
+    height: 50px;
+    border-width: 0px 0px 0px 0px;
+    border-radius: 7px;
+    border-color:none;
+    -webkit-box-shadow: 0px 3px 10px 2px rgba(34, 60, 80, 0.2);
+-moz-box-shadow: 0px 3px 10px 2px rgba(34, 60, 80, 0.2);
+box-shadow: 0px 3px 10px 2px rgba(34, 60, 80, 0.2);
+  }
+
+  .inputcheckboxTask{
+    display: flex;
+  }
+.checkboxTask{
+zoom:175%;
+margin-left:10px;
+
+
+}
+
+.TextInputTask{
+  margin: left 15px;
+  outline:none;
+  border-width: 0 0 1 0;
+  border:none;
+}
+.alltime{
+  margin-left: 150px
+
+}
