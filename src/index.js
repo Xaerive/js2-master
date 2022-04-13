@@ -5,6 +5,12 @@ const sectionTasksDone = document.querySelector('.done-section .tasks');
 const gogo = document.querySelector('.ADD');
 const taskNameInput = document.querySelector('.new-task-section input');
 
+taskNameInput.onkeydown = function(e) {
+  if (e.key == 'Enter') {
+    gogo.click();
+  }
+};
+
 gogo.onclick = function() {
   const newTask = document.createElement('div');
   newTask.classList.add('task');
@@ -54,6 +60,8 @@ gogo.onclick = function() {
   newTask.appendChild(dateDiv);
 
   sectionTasks.appendChild(newTask);
+
+  taskNameInput.value = '';
 };
 
 const openSectionSortingSelector = document.querySelector(
