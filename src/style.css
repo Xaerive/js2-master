@@ -161,3 +161,7 @@ header .container {
     margin-left: 150px
 
 }
+
+.hidden {
+    display: none;
+}

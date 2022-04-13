@@ -30,6 +30,8 @@ gogo.onclick = function() {
   divInputTextTask.textContent = taskNameInput.value;
 
   const dateDiv = document.createElement('div');
+  dateDiv.classList.add('creationDate');
+
   const creationDateDiv = document.createElement('div');
   creationDateDiv.classList.add('alltime');
   const creationTimeElement = document.createElement('time');
@@ -37,6 +39,7 @@ gogo.onclick = function() {
     hour: '2-digit',
     minute: '2-digit',
   });
+  dateDiv.setAttribute('data-date', new Date());
   creationDateDiv.appendChild(creationTimeElement);
   dateDiv.appendChild(creationDateDiv);
   // const inputTitleTask = document.createElement('input');
@@ -51,4 +54,42 @@ gogo.onclick = function() {
   newTask.appendChild(dateDiv);
 
   sectionTasks.appendChild(newTask);
+};
+
+const openSectionSortingSelector = document.querySelector(
+  '.open-task-section-header select',
+);
+openSectionSortingSelector.onchange = function() {
+  const isAsc = openSectionSortingSelector.value == 'asc';
+  const tasksElements = sectionTasks.querySelectorAll('.task');
+  const tasksElementsArray = Array.from(tasksElements);
+  tasksElementsArray.sort((prev, next) => {
+    const dateElement1 = prev.querySelector('.creationDate');
+    const dateElement2 = next.querySelector('.creationDate');
+    const date1 = new Date(dateElement1.getAttribute('data-date')).getTime();
+    const date2 = new Date(dateElement2.getAttribute('data-date')).getTime();
+
+    return isAsc ? date2 - date1 : date1 - date2;
+  });
+
+  sectionTasks.innerHTML = '';
+  tasksElementsArray.forEach(el => {
+    sectionTasks.appendChild(el);
+  });
+};
+
+const searchInput = document.querySelector('.search input');
+
+searchInput.oninput = function() {
+  const tasksElements = document.querySelectorAll('.task');
+  const tasksElementsArray = Array.from(tasksElements);
+  tasksElementsArray.forEach(task => {
+    const textElement = task.querySelector('.titleTask');
+    const text = textElement.textContent;
+    if (text.toLowerCase().includes(searchInput.value.toLowerCase())) {
+      task.classList.remove('hidden');
+    } else {
+      task.classList.add('hidden');
+    }
+  });
 };
