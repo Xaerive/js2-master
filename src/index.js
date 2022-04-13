@@ -61,6 +61,21 @@ gogo.onclick = function() {
 
   sectionTasks.appendChild(newTask);
 
+  let tasks;
+  const tasksFromLocaleStorage = localStorage.getItem('tasks');
+
+  if (tasksFromLocaleStorage === undefined) {
+    tasks = [];
+  } else {
+    tasks = JSON.parse(tasksFromLocaleStorage);
+  }
+
+  tasks.push({
+    title: taskNameInput.value,
+    creationDate: new Date(),
+  });
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+
   taskNameInput.value = '';
 };
 
